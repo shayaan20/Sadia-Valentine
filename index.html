@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Valentine's Puzzle Part 1</title>
+        <link rel="stylesheet" type="text/css" href="../Valentines/css/style.css">
+		<style>
+    </style>
+    </head>
+
+    <body>
+		<div id="valentineQuestion">
+		<b>HIIII MYYYYY LOVEEEEEEEEEE <3</b>
+		<p id="valentineQuestion2">IT'S THAT TIME OF THE YEAR AGAIN MY LOVE </p>
+		<img src ='images/image2.jpg' alt = 'cat asking question' class="responsive">
+		<p id="valentineQuestion3">However, before I ask you the question you've been waiting for, you have to complete a few challenges</p>
+		<b id="valentineQuestion">Challenge 1: Solve the BAEE PUZZLEEEE</b>
+		</div>
+		
+        <section id="game-space">
+            <canvas id="game-board"></canvas>
+            <div id="congrats">
+                <h1>MANNNNN THATS MY BAEEEEEEE </h1>
+				<img src ='images/winbear.gif' alt = 'cat asking question' class="responsive">
+                <h2>BEFORE YOU CAN MOVE ON YOU HAVE TO ANSWER</h2>
+                <h2>What's the one thing that always manages to make me excited? (hint: it rhymes with Badia Baleh)</h2>
+                <div class="container">
+        <input type="text" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Check</button>
+    </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="js/puzzle.js"></script>
+        <script type="text/javascript">
+            // Everything is set up, get it all started when the document has loaded
+            window.addEventListener('load', function() { gameBoard.init(); });
+        </script>
+    </body>
+</html> 
