@@ -3,37 +3,158 @@
     <head>
         <meta charset="UTF-8">
         <title>Valentine's Puzzle Part 1</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-		<style>
-    </style>
-    </head>
+        <link rel="stylesheet" type="text/css" href="../Valentines/css/style.css">
+        <style>
+            body {
+                height: calc(100vh - 30px);
+                margin: 0;
+                padding: 15px;
+                text-align: center;
+                margin-top: 30px;
+                font-family: 'Courier';
+                background-color: #FFF5E4;
+                color: #FF9494;
+            }
 
+            #valentineQuestion {
+                font-size: 50px;
+                margin-bottom: 10px;
+            }
+
+            #valentineQuestion2, #valentineQuestion3 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            #valentineQuestion3 {
+                margin-top: 10px;
+            }
+
+            @keyframes slidedown {
+                0% {
+                    transform: rotateX(-90deg);
+                }
+                100% {
+                    transform: rotateX(0);
+                }
+            }
+
+            .slidedown {
+                animation-name: slidedown;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                transform-origin: top;
+            }
+
+            #game-space {
+                width: 100%;
+                min-width: 640px;
+                margin: 0 auto;
+                height: 100%;
+                min-height: 640px;
+                position: relative;
+            }
+
+            #congrats {
+                display: none;
+                width: 40%;
+                text-align: center;
+                border: 2px solid #00aa00;
+                border-radius: 20px;
+                background-color: #ccffcc;
+                position: absolute;
+                left: 30%;
+                top: 40%;
+            }
+
+            #instructions {
+                width: 50%;
+                left: 25%;
+                top: 25%;
+                position: absolute;
+                border: 2px solid #aa0000;
+                background-color: #ffcccc;
+                border-radius: 20px;
+            }
+
+            #instructions h1 {
+                text-align: center;
+            }
+
+            #congrats p, #instructions p {
+                text-align: center;
+            }
+
+            #congrats input[type=button], #instructions input[type=button] {
+                border: 2px solid #000000;
+                border-radius: 10px;
+                font-size: 1.4em;
+                padding: 5px 20px;
+            }
+
+            .container {
+                margin: 20px;
+            }
+
+            #passwordInput {
+                padding: 5px;
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 5px 10px;
+            }
+
+            #burger, #fries {
+                width: 30%;
+                height: 30%;
+            }
+
+            #wrong {
+                font-size: 90px;
+                margin-top: 10px;
+            }
+
+            .answerButton {
+                padding: 10px 20px;
+                font-size: 18px;
+                cursor: pointer;
+                margin: 10px;
+                font-family: 'Courier';
+                margin-bottom: 20px;
+                background-color: #FFE3E1;
+                color: #e67373;
+                border-radius: 12px;
+                border: 2px solid #FFE3E1;
+            }
+        </style>
+    </head>
     <body>
-		<div id="valentineQuestion">
-		<b>HIIII MYYYYY LOVEEEEEEEEEE <3</b>
-		<p id="valentineQuestion2">IT'S THAT TIME OF THE YEAR AGAIN MY LOVE </p>
-		<img src ='images/image2.jpg' alt = 'cat asking question' class="responsive">
-		<p id="valentineQuestion3">However, before I ask you the question you've been waiting for, you have to complete a few challenges</p>
-		<b id="valentineQuestion">Challenge 1: Solve the BAEE PUZZLEEEE</b>
-		</div>
-		
+        <div id="valentineQuestion">
+            <b>HIIII MYYYYY LOVEEEEEEEEEE <3</b>
+            <p id="valentineQuestion2">IT'S THAT TIME OF THE YEAR AGAIN MY LOVE</p>
+            <p id="valentineQuestion3">However, before I ask you the question you've been waiting for, you have to complete a few challenges</p>
+            <b id="valentineQuestion">Challenge 1: Solve the BAEE PUZZLEEEE</b>
+        </div>
+        
         <section id="game-space">
             <canvas id="game-board"></canvas>
             <div id="congrats">
-                <h1>MANNNNN THATS MY BAEEEEEEE </h1>
-				<img src ='images/winbear.gif' alt = 'cat asking question' class="responsive">
+                <h1>MANNNNN THATS MY BAEEEEEEE</h1>
+                <img src='images/winbear.gif' alt='cat asking question' class="responsive">
                 <h2>BEFORE YOU CAN MOVE ON YOU HAVE TO ANSWER</h2>
                 <h2>What's the one thing that always manages to make me excited? (hint: it rhymes with Badia Baleh)</h2>
                 <div class="container">
-        <input type="text" id="passwordInput" placeholder="Enter password">
-        <button onclick="checkPassword()">Check</button>
-    </div>
+                    <input type="text" id="passwordInput" placeholder="Enter password">
+                    <button onclick="checkPassword()">Check</button>
+                </div>
             </div>
         </section>
+        
         <script type="text/javascript" src="js/puzzle.js"></script>
         <script type="text/javascript">
             // Everything is set up, get it all started when the document has loaded
             window.addEventListener('load', function() { gameBoard.init(); });
         </script>
     </body>
-</html> 
+</html>
