@@ -46,7 +46,7 @@ function checkPassword() {
         // Redirect to 'page2.html' in the same directory
         window.location.href = "page2.html";
     } else {
-        alert("CMON BAE THINK A LITTLE HARDER OKAY (and use caps)");
+        alert("Incorrect password!");
     }
 }
 
@@ -109,9 +109,9 @@ const gameBoard = {
     slots: [],
     pieceSpace: null,
     boardSpace: null,
-    pieceSize: 625,
-    MAX_PUZZLE_WIDTH: 2500,
-    MAX_PUZZLE_HEIGHT: 2500,
+    pieceSize: 160,
+    MAX_PUZZLE_WIDTH: 640,
+    MAX_PUZZLE_HEIGHT: 480,
     isDragging: false,
     
     // Begin the puzzle
@@ -122,7 +122,7 @@ const gameBoard = {
             gameBoard.fitCanvas();
             gameBoard.initSpaces();
             gameBoard.playingBoard = gameBoard.getPlayingBoard();
-            for ( let i = 0, ln = gameBoard.slots.length-100; i < ln; i++ ) {
+            for ( let i = 0, ln = gameBoard.slots.length; i < ln; i++ ) {
                 gameBoard.slots[i].updateBounds(gameBoard.playingBoard);
             }
             gameBoard.redraw();
@@ -135,7 +135,7 @@ const gameBoard = {
         this.context = this.canvas.getContext('2d');
         this.image = new Image();
         this.image.onload = function () { gameBoard.initPieces(); };
-        this.image.src = 'images/anniversary.jpg';
+        this.image.src = 'images/image1.jpg';
     },
     
     fitCanvas: function () {
